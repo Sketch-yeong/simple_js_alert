@@ -60,6 +60,12 @@
             let nativeInput = document.getElementById("native_input")
             nativeInput.value = message;
         }
+        
+        // 네이티브 에서 호출할 메소드
+        function getToken() {
+            // console.log('nativeToJsEventCall : $message');
+            webkit.messageHandlers.getToken.postMessage("token줘");
+        }
     </script>
 </head>
 
@@ -79,7 +85,8 @@
         <h2 class="">JS에서 안드로이드 네이티브 메소드 호출 - showAndroidToast</h2>
         <input type="text" placeholder="전달할 내용을 입력하세요" name="androidMessage" id="androidMessage" />
         <button onclick="showAndroidToast();">안드로이드 네이티브로 전달</button>
-
+        
+        <button onclick="getToken();">Token Test</button>
 
         <h2 class="">JS에서 iOS 네이티브로 전달</h2>
 
